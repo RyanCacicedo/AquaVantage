@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaVantage</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Rpd_BHvjT673Tk5oU");
+   })();
+</script>
+</head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./assets/Screenshot__23_-removebg-preview.png" alt="" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+              ">About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+              ">Projects</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+              ">Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="
+              nav__link--anchor
+              link__hover-effect
+              link__hover-effect--black
+              "><i class="fas fa-adjust"></i></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+            <h1 class="title">Welcome To</h1>
+            <h1 class="title gradient">AquaVantage.</h1>
+            <p class="header__para">   AquaVantage is a Downriver Michigan based
+                <b class="gradient">Pool Service</b>
+                with a strong passion for aquatic services. We specialize in openings/closings,
+                weekly maintenance, & service calls/repairs.
+            <br>
+            Here's a bit more <b class="gradient click" onclick="toggleModal()">about AquaVantage.</b>
+            </p>
+            <div class="social__list">
+                <a href="https://www.linkedin.com/in/ryancacicedo/" target="_blank" class="social__link click">
+                    <i class="fab fa-facebook gradient"></i>
+                </a>
+                <a href="https://github.com/RyanCacicedo" target="_blank" class="social__link click">
+                    <i class="fab fa-github gradient"></i>
+                </a>
+                <a href="./assets/David Bragg Resume.pdf" target="_blank" class="social__link click">
+                    <i class="fas fa-file gradient"></i>
+                </a>
+            </div>
+        </div>
+      </header>
+      <a href="#">
+          <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fas fa-envelope gradient"></i>
+        </button>
+    </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit AquaVantage.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Pool Service.</h4>
+            <p class="modal__para">
+                <b class="gradient">AquaVantage</b> consists of a passionate crew with specialized skills in <b class="gradient">pool services.</b>
+                <br>
+                We currently work on any type of pool services you may need including but not limited to openings/closings, weekly maintenance, & service calls/repairs. Our <b class="gradient">talented</b> and <b class="gradient">experienced</b> crew are eager to get your pool looking right!
+            </p>
+            <div class="modal__languages">
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5o-A9kQrJ0RpqTeWSwHy6j4r5pVBcAt2lrhJlgTrPDaiMMvw-&s" alt="">
+                    <span class="language__name">Openings/Closings</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNJt6ZPCfs23mbx1kcQDxGwYJZ_qUrlNJBCfpKXAtsYjipuFM&s" alt="">
+                    <span class="language__name">Maintenance</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLxFz7xRH2A6hZuOXvzceBNweaBYq_ODo2dgbJmoWSmVuSYWMf&s" alt="">
+                    <span class="language__name">Service Calls</span>
+                </figure>
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Let's have a chat!
+            </h3>
+            <h4 class="modal__sub-title modal__sub-title--contact">
+                We are currently open to new work.
+            </h4>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it my way
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! We will be in touch soon.
+            </div>
+        </div>
+      </div>
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of our <span class="gradient">services</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img class="project__img" src="https://guardianpoolfence.com/wp-content/uploads/2016/07/how-to-make-swimming-pool-beautiful.jpg" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Pool Openings/Closings
+                                </h3>
+                                <p class="project__description--para">
+                                    Pool Opening service includes professionally draining water off cover and taking the cover off, hooking up the filtration system, & adding any chemicals that may be needed etc. Pool Closing service includes a full winterization of the pool by adding winterizing chemicals to the water, disconnecting/winterizing filtration system & putting on winter cover etc.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/RyanCacicedo/E-commerce-Library" target="_blank" class="project__description--link">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://e-commerce-library-puce.vercel.app/" target="_blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img class="project__img" src="https://images.squarespace-cdn.com/content/v1/5e279c1ad8a7ad41e680b1d4/1591747812971-012XWX3JVIDPABWQJSIB/PresPoolsOct2018-21.jpg?format=1500w" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Weekly Maintenance
+                                </h3>
+                                <p class="project__description--para">
+                                    Weekly Maintenance of any size pool would be a service to keep your pool crystal clear. This would include 1-2 visits per week to add any chemicals, perform a power vaccuum on the pool & any other service work that may need to be done etc.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/RyanCacicedo/Netflix-Clone" class="project__description--link">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://netflix-clone-nine-lovat.vercel.app/login" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img class="project__img" src="https://houseofgracedesign.files.wordpress.com/2016/02/traditional-pool.jpg?w=640" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Service Calls/Repairs
+                                </h3>
+                                <p class="project__description--para">
+                                    Service calls/repairs would include literally anything pool related that you would need serviced or repaired.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/RyanCacicedo/AnimeStudio" class="project__description--link">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://anime-studio-tawny.vercel.app/" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <a href="#">
+                        <img class="footer__logo--img" src="./assets/Screenshot__23_-removebg-preview.png" alt="">
+                    </a>
+                </figure>
+                <div class="footer__social--list">
+                <a href="#" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                About
+                </a>
+                <a href="#projects" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Projects
+            </a>
+            <a href="#" onclick="toggleModal()" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Contact
+            </a>
+        </div>
+        <div class="footer__copyright">Copyright © 2022 AquaVantage</div>
+    </div>
+</div>
+</footer>
+</body>
+</html>
